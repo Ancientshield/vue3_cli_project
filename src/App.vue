@@ -2,15 +2,32 @@
 	<h1>一個人的訊息</h1>
 	<h2>姓名：{{ name }}</h2>
 	<h2>年齡：{{ age }}</h2>
-	<button @click="sayHello">說話</button>
+	<h2>性別：{{ sex }}</h2>
+	<button @click="sayHello">Vue3 寫在setup中呼叫回傳的 sayHello()</button>
+	<br />
+	<br />
+	<button @click="sayWelcome">Vue2 配置的實體方法：sayWelcome()</button>
 </template>
 
 <script>
-	import { h } from 'vue';
+	// import { h } from 'vue';
 	export default {
 		name: 'app',
 
+		// 向下兼容 Vue2，Vue2 是在實體裡面寫 key:value
+		data() {
+			return {
+				sex: 'male',
+			};
+		},
+		methods: {
+			sayWelcome() {
+				alert('歡迎！');
+			},
+		},
+
 		// 此處只是測試一下 setup，暫時不考慮響應式的問題
+		// setup 是在函數裡面寫 function
 		// 若 setup 返回的是數據、方法 ...，則 template 可以直接呼叫
 		setup() {
 			// 數據
