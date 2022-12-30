@@ -39,7 +39,7 @@
 				// name = 'Marry';
 				// age = '40';
 
-				// ref 加工完的值是一個 RefImpl（Reference Implement Object）
+				// ref 加工完傳到這裡的值是一個 RefImpl（Reference Implement Object）
 				// console.log(name, age);
 				// name.value = 'Marry';
 				// age.value = '40';
