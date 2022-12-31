@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 資料源頭
+			let person = {
+				name: 'Jack',
+				age: 18,
+			};
+
+			// 模擬 Vue2 響應式
+
+			/*
+			   #region
+			   let p = {};
+			Object.defineProperty(p, 'name', {
+				configurable: true,
+				// 有人讀取 name 時呼叫
+				get() {
+					return person.name;
+				},
+
+				// 有人修改 name 時呼叫
+				set(value) {
+					// 模擬 Vue2 更新頁面
+					console.log('有人修改name屬性，Vue2發現了，我要去更新頁面！');
+					person.name = value;
+				},
+			});
+			Object.defineProperty(p, 'age', {
+				// 有人讀取 age 時呼叫
+				get() {
+					return person.age;
+				},
+
+				// 有人修改 age 時呼叫
+				set(value) {
+					// 模擬 Vue2 更新頁面
+					console.log('有人修改age屬性，Vue2發現了，我要去更新頁面！');
+					person.age = value;
+				},
+			});
+			   #endregion
+			   */
+
+			// 模擬 Vue3 響應式
+			const p = new Proxy(person, {
+				// target 資料源頭， handler 代理
+				get(target, handler) {},
+				set() {},
+			});
+		</script>
+	</body>
+</html>
