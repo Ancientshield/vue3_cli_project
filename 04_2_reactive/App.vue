@@ -1,9 +1,7 @@
 <template>
 	<h1>一個人的資料</h1>
-	<!-- remplate 會自動解析，發現 name 是 RefImpl 的物件，就會自動調用 value -->
 	<h2>姓名：{{ person.name }}</h2>
 	<h2>年齡：{{ person.age }}</h2>
-	<!-- 一般的物件取值就要用『.』-->
 	<h3>職業：{{ person.job.type }}</h3>
 	<h3>年薪：{{ person.job.salary }}</h3>
 	<h3>
@@ -48,7 +46,7 @@
 				// console.log(job); // ‣Proxy {name: 'Jason', type: '前端工程師', salary: '150w'}
 
 				// ref 加工完傳到這裡的值是一個 RefImpl（Reference Implement Object）
-				// Vue2 使用 Object.defineProperty() 的 get、set
+				// Vue2 使用 Object.defineProperty() 的 get、set，詳細參考 Vue 全家桶 145
 				// Vue3 則是 reactive function
 
 				person.name = 'Bonny';

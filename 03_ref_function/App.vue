@@ -1,6 +1,6 @@
 <template>
 	<h1>一個人的資料</h1>
-	<!-- remplate 會自動解析，發現 name 是 RefImpl 的物件，就會自動調用 value -->
+	<!-- template 會自動解析，發現 name 是 RefImpl 的物件，就會自動調用 value -->
 	<h2>姓名：{{ name }}</h2>
 	<h2>年齡：{{ age }}</h2>
 	<!-- 一般的物件取值就要用『.』-->
