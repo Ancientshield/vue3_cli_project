@@ -47,11 +47,33 @@
 			#endregion*/
 
 			// 模擬 Vue3 響應式
+			/* #region
+			// p = 代理(Proxy)實體物件，修改 p， person 都能發現
 			const p = new Proxy(person, {
-				// target 資料源頭， handler 代理，MDN 用 handler
-				get(target, handler) {},
-				set() {},
+				// 有兩個參數，第一個 MDN 命名 target，捕獲資料， 第二個 MDN 命名 handler ，操作修改屬性後 return
+				// get() 在讀取 p 時呼叫
+				get(target, handler) {
+					console.log(`Vue3 的 get() 讀取了 p 身上的 ${handler} 屬性`);
+					return target[handler];
+				},
+				// set() 在修改 or 增加 p 屬性時呼叫
+				set(target, handler, value) {
+					console.log(
+						`Vue3 的 set 修改或增加了 p 身上的 ${handler} 屬性，我要去更新頁面了！`
+					);
+					target[handler] = value;
+				},
+				// deleteProperty() 在刪除 p 的屬性時呼叫
+				deleteProperty(target, handler) {
+					console.log(
+						`Vue3 的 deleteProperty() 讀取了 p 身上的 ${handler} 屬性，要去刪除了！`
+					);
+					return delete target[handler];
+				},
 			});
+			#endregion */
+
+			let obj = { a: 1, b: 2 };
 		</script>
 	</body>
 </html>
