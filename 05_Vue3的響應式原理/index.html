@@ -15,10 +15,9 @@
 			};
 
 			// 模擬 Vue2 響應式
-
 			/*
-			   #region
-			   let p = {};
+			#region
+			let p = {};
 			Object.defineProperty(p, 'name', {
 				configurable: true,
 				// 有人讀取 name 時呼叫
@@ -46,8 +45,8 @@
 					person.age = value;
 				},
 			});
-			   #endregion
-			   */
+			#endregion
+			*/
 
 			// 模擬 Vue3 響應式
 			const p = new Proxy(person, {
