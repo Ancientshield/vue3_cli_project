@@ -11,7 +11,7 @@
 	<h3>測試c值：{{ person.a.b.c }}</h3>
 	<button @click="changeInfo">修改人的資料</button>
 	<button @click="addSex">新增性別</button>
-	<button @click="deleteName">刪除人名</button>
+	<button @click="deleteName">刪除性名</button>
 </template>
 
 <script>
