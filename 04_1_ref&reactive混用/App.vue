@@ -50,7 +50,7 @@
 				// console.log(job); // ‣Proxy {name: 'Jason', type: '前端工程師', salary: '150w'}
 
 				// ref 加工完傳到這裡的值是一個 RefImpl（Reference Implement Object）
-				// Vue2 使用 _data constructor 建立 class，使用 Object.defineProperty() 的 get、set
+				// Vue2 使用 Object.defineProperty() 的 get、set
 				// Vue3 則是 reactive function
 
 				name.value = 'Bonny';
