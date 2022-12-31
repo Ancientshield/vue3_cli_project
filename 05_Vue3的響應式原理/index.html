@@ -15,8 +15,7 @@
 			};
 
 			// 模擬 Vue2 響應式
-			/*
-			#region
+			/* #region
 			let p = {};
 			Object.defineProperty(p, 'name', {
 				configurable: true,
@@ -45,12 +44,11 @@
 					person.age = value;
 				},
 			});
-			#endregion
-			*/
+			#endregion*/
 
 			// 模擬 Vue3 響應式
 			const p = new Proxy(person, {
-				// target 資料源頭， handler 代理
+				// target 資料源頭， handler 代理，MDN 用 handler
 				get(target, handler) {},
 				set() {},
 			});
