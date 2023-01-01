@@ -48,7 +48,7 @@
 				// Vue3 則是 reactive function
 				name.value = 'Bonny';
 				age.value = 48;
-				// 因為 reactive 也把 object 變成 Proxy {name: 'Jason', type: '前端工程師', salary: '150w'}
+				// 因為 reactive 也把 object 變成 ‣Proxy {name: 'Jason', type: '前端工程師', salary: '150w'}
 				job.type = 'UI設計師';
 				job.salary = '160w';
 				job.a.b.c = 999;

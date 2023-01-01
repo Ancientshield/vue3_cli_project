@@ -54,7 +54,7 @@
 			// 數據
 			let name = 'John';
 			let age = 18;
-			let a = 'Vue3';
+			let a = 'Vue3'; // 重複的值 Vue3 > Vue2
 
 			// 方法
 			function sayHello() {
@@ -81,6 +81,7 @@
 				sayHello,
 				// 寫好的 function 記得要回傳
 				vue3ReadData,
+				// eslint-disable-next-line vue/no-dupe-keys
 				a,
 			};
 

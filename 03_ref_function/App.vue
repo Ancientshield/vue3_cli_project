@@ -44,7 +44,7 @@
 				// name.value = 'Marry';
 				// age.value = '40';
 
-				// Vue2 使用 _data constructor 建立 class，使用 Object.defineProperty() 的 get、set
+				// Vue2 使用 Object.defineProperty() 的 get、set
 				// Vue3 則是 reactive function
 				// console.log(name.value, age.value);
 
