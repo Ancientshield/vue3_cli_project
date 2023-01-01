@@ -14,7 +14,7 @@
 		// 宣告 props 陣列屬性來接收 Proxy 傳值
 		props: ['msg', 'school'],
 
-		// 要加入 emits（複數） 屬性告訴父元件，子元件也綁定了 hello 事件，否則會觸發警告
+		// 要加入 emits 屬性告訴父元件，子元件也綁定了 hello 事件，否則會觸發警告
 		emits: ['hello'],
 
 		beforeCreate() {
