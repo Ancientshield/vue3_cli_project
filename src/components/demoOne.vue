@@ -1,52 +1,45 @@
 <template>
-	<h1>一個人的資料</h1>
-	性：<input type="text" v-model="person.firstName" />
+	<h2>當前求和為：{{ sum }}</h2>
 	<br />
-	名：<input type="text" v-model="person.lastName" />
-	<br />
-	全名1：<span>{{ person.fullName }}</span>
-	<br />
-	全名2：<input type="text" v-model="person.fullName" />
+	<button @click="sum++">點我+1</button>
+	<hr />
+	<h2>當前的資料為：{{ msg }}</h2>
+	<button @click="msg += '!'">修改資料</button>
 </template>
 
 <script>
-	// import { reactive } from 'vue';
-	// Vue3
-	import { reactive, computed } from 'vue';
+	import { ref, watch } from 'vue';
 	export default {
 		name: 'demoOne',
-		/*
-			// 這是 Vue2 的寫法，不要寫
-			computed: {
-				fullName() {
-					return `${this.person.firstName}-${this.person.lastName}`;
-				},
-			},
-			*/
 		setup() {
-			let person = reactive({
-				firstName: 'Jack',
-				lastName: 'Lin',
-			});
-			/* Vue3 計算屬性的簡寫形式，沒有考慮計算屬性被修改的情況，修改了會噴錯
-				person.fullName = computed(() => {
-					return `${person.firstName}-${person.lastName}`;
-				});
+			// 資料
+			let sum = ref(0);
+			let msg = '你好啊';
+
+			// 情況一：監視 ref 所定義的【一個】響應式資料
+			/* 
+			watch(
+				sum,
+				(newValue, oldValue) => {
+					console.log('sum變了', newValue, oldValue);
+				},
+				{ immediate: true }
+			);
 			*/
-			// Vue3 計算屬性的完整寫法，考慮讀和寫
-			person.fullName = computed({
-				get() {
-					return `${person.firstName}-${person.lastName}`;
+
+			// 情況二：監視 ref 所定義的【多個】響應式資料
+
+			watch(
+				[sum, msg],
+				(newValue, oldValue) => {
+					console.log('sum或msg變了', newValue, oldValue);
 				},
-				set(value) {
-					const nameArray = value.split('-');
-					person.firstName = nameArray[0];
-					person.lastName = nameArray[1];
-				},
-			});
+				{ immediate: true }
+			);
 
 			return {
-				person,
+				sum,
+				msg,
 			};
 		},
 	};
