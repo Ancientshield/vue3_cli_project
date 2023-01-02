@@ -28,7 +28,6 @@
 			*/
 
 			// 情況二：監視 ref 所定義的【多個】響應式資料
-
 			watch(
 				[sum, msg],
 				(newValue, oldValue) => {
