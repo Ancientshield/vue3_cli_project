@@ -10,12 +10,12 @@
 	<br />
 	<br />
 	<button @click="vue2ReadData">
-		在 Vue2 的配置中去讀取 Vue3 中的數據與方法
+		在 Vue2 的 data 配置中去讀取 Vue3 中的數據與方法
 	</button>
 	<br />
 	<br />
 	<button @click="vue3ReadData">
-		在 Vue3 的 setup 中去讀取不到 Vue2 中的數據與方法
+		在 Vue3 的 setup 配置中去讀取 Vue2 中的數據與方法（讀取不到）
 	</button>
 	<h2>如果重複配置同樣的數據，則 a 的值是：{{ a }}</h2>
 	<h2>Vue2 跟 Vue3 不要混用，如果重名，則以 Vue3 為主</h2>
