@@ -14,7 +14,7 @@
 		setup() {
 			// 資料
 			let sum = ref(0);
-			let msg = '你好啊';
+			let msg = ref('你好啊');
 
 			// 情況一：監視 ref 所定義的【一個】響應式資料
 			/* 
