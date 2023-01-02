@@ -92,7 +92,13 @@
 				{ deep: true } // 此處需要開啟深度監視
 			);
 
-			// 總結：一般開發用情況三就足夠了。
+			/* 
+			總結：
+				ref 定義的物件是 RefImpl，reactive 是 Proxy
+				硬要用 watch 監視 person 物件，則 watch(person.value, ...) 就要點 value
+				因為就算不用 reactive，Vue3 也會自動將 person 物件轉成 Proxy
+				一般開發用情況三就足夠了。
+			*/
 
 			return {
 				sum,
