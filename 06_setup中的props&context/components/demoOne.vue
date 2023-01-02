@@ -2,7 +2,7 @@
 	<h1>一個人的資料</h1>
 	<h2>姓名：{{ person.name }}</h2>
 	<h2>年齡：{{ person.age }}</h2>
-	<button @click="test">測試觸發Demo元件的Hello事件</button>
+	<button @click="test">測試觸發父元件中Demo元件的Hello事件</button>
 </template>
 
 <script>
@@ -14,7 +14,11 @@
 		// 宣告 props 陣列屬性來接收 Proxy 傳值
 		props: ['msg', 'school'],
 
-		// 要加入 emits 屬性告訴父元件，子元件也綁定了 hello 事件，否則會觸發警告
+		/* 
+			要在子元件中加入 emits 屬性告訴父元件，
+			子元件也綁定了在父元件中定義子元件 <demoOne @hello="..." /> 的 hello 事件，
+			否則會觸發警告！
+		*/
 		emits: ['hello'],
 
 		beforeCreate() {
@@ -27,7 +31,7 @@
 			// console.log('---setup---', props); // ‣Proxy {"msg": "你好啊", "school": "台灣大學"}
 			// console.log('---setup---', context); // ‣{expose: f} 物件，重點關注裡面的 attrs、emit、slots
 			// console.log('---setup---', context.attrs); // attrs 是接 props 裏面沒宣告的東西（相當於 Vue2 的 $attrs）
-			// console.log('---setup---', context.emit); // 觸發自定義事件
+			// console.log('---setup---', context.emit); // 觸發父元件中在 template 中子元件的自定義事件
 			console.log('---setup---', context.slots); // 收到父元件的 v-slots:
 
 			// 資料

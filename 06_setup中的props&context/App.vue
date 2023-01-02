@@ -1,6 +1,7 @@
 <template>
 	<!-- 傳值給 demoOne -->
 	<demoOne @hello="showHelloMsg" msg="你好啊" school="台灣大學">
+		<!-- Vue3 不要用 slot="qwe"，用新寫法 v-slot:qwe -->
 		<template v-slot:qwe>
 			<span>醫學系</span>
 		</template>
