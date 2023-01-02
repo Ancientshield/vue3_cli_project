@@ -37,6 +37,7 @@
 			});
 
 			// 綁定父元件 hello 事件 context.emit('hello'); 傳值 666 給父元件
+			// 這裡只是將觸發的方法命名為 test() 而已
 			function test() {
 				context.emit('hello', 666);
 			}
