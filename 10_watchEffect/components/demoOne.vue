@@ -55,7 +55,7 @@
 			watchEffect(() => {
 				const x1 = sum.value;
 				const x2 = person.jobe.j1.salary;
-				console.log('watchEffect所指定的callbackFn');
+				console.log(`watchEffect所指定的callbackFn、${x1}、${x2}`);
 			});
 
 			return {
