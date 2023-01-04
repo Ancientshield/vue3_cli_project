@@ -61,6 +61,7 @@
 					console.log(
 						`Vue3 的 set 修改或增加了 p 身上的 ${handler} 屬性，我要去更新頁面了！`
 					);
+					// return target[handler] = value // Vue3 不這麼寫
 					return Reflect.set(target, handler, value);
 				},
 				// deleteProperty() 在刪除 p 的屬性時呼叫
