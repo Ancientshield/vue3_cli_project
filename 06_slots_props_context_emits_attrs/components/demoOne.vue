@@ -2,6 +2,9 @@
 	<h1>一個人的資料</h1>
 	<h2>姓名：{{ person.name }}</h2>
 	<h2>年齡：{{ person.age }}</h2>
+	<!-- slot 的簡單範例，接收父元件設定的插槽 -->
+	<h2>學系：<slot name="qwe"></slot></h2>
+	<h2>學系：<slot name="asd"></slot></h2>
 	<button @click="test">測試觸發父元件中Demo元件的Hello事件</button>
 </template>
 
@@ -13,6 +16,13 @@
 		// 為父元件 App 對子元件 demoOne 傳值，一樣是透過 Proxy 建立代理實體物件傳遞
 		// 宣告 props 陣列屬性來接收 Proxy 傳值
 		props: ['msg', 'school'],
+		// 除了可以接收陣列外，也可以接受物件屬性類型
+		/* 官網範例：
+		  props: {
+    		title: String,
+    		likes: Number
+  		}
+		*/
 
 		/* 
 			要在子元件中加入 emits 屬性告訴父元件，
@@ -46,9 +56,12 @@
 				context.emit('hello', 666);
 			}
 
+			// ❗️總結：props -> 接收父元件參數，emits -> 綁定父元件事件，attrs -> 收集漏接參數
+
 			return {
 				person,
 				test,
+				context,
 			};
 		},
 	};

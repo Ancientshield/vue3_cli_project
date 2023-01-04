@@ -2,17 +2,17 @@
 	<div class="app">
 		<h3>我是App祖先元件，{{ name }}--{{ price }}</h3>
 		<!-- 純粹父子元件之間傳資料呢？用 props -->
-		<childComponent name="Jack" :age="18" />
+		<ChildComponent name="Jack" :age="18" />
 	</div>
 </template>
 
 <script>
-	import childComponent from './components/childComponent.vue';
+	import ChildComponent from './components/ChildComponent.vue';
 	import { reactive, toRefs, provide } from 'vue';
 	export default {
 		name: 'app',
 		// 要記得註冊元件，且值是物件
-		components: { childComponent },
+		components: { ChildComponent },
 		setup() {
 			let car = reactive({
 				name: '賓士',

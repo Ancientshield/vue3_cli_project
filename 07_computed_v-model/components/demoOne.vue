@@ -1,5 +1,7 @@
 <template>
 	<h1>一個人的資料</h1>
+	<!-- ❗️單向綁定 v-bind:herf="xxx" 的簡寫是 :herf="xxx" -->
+	<!-- ❗️雙向綁定 v-model:value="xxx" 的簡寫是 v-model="xxx" -->
 	性：<input type="text" v-model="person.firstName" />
 	<br />
 	名：<input type="text" v-model="person.lastName" />
@@ -22,17 +24,18 @@
 					return `${this.person.firstName}-${this.person.lastName}`;
 				},
 			},
-			*/
+		*/
 		setup() {
 			let person = reactive({
 				firstName: 'Jack',
 				lastName: 'Lin',
 			});
+			// #region
 			/* Vue3 計算屬性的簡寫形式，沒有考慮計算屬性被修改的情況，修改了會噴錯
-				person.fullName = computed(() => {
-					return `${person.firstName}-${person.lastName}`;
-				});
-			*/
+			person.fullName = computed(() => {
+				return `${person.firstName}-${person.lastName}`;
+			}); */
+			// #endregion
 			// Vue3 計算屬性的完整寫法，考慮讀和寫
 			person.fullName = computed({
 				get() {

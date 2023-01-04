@@ -3,6 +3,7 @@
 	<h2>姓名：{{ name }}</h2>
 	<h2>年齡：{{ age }}</h2>
 	<h2>性別：{{ sex }}</h2>
+	<!-- @click 為 v-on:click 的簡寫 -->
 	<button @click="sayHello">Vue3 寫在setup中呼叫回傳的 sayHello()</button>
 	<br />
 	<br />
