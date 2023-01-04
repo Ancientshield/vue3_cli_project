@@ -1,17 +1,12 @@
 <template>
 	<div class="son">
-		<h3>我是Son孫元件，inject--{{ car.name }}--{{ car.price }}</h3>
+		<h3>我是Son元件</h3>
 	</div>
 </template>
 
 <script>
-	import { inject } from 'vue';
 	export default {
 		name: 'SonComponent',
-		setup() {
-			let car = inject('car');
-			return { car };
-		},
 	};
 </script>
 

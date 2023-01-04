@@ -1,15 +1,14 @@
 <template>
 	<div class="child">
-		<h3>我是Child子元件</h3>
+		<h3>我是Child元件</h3>
 		<SonComponent />
 	</div>
 </template>
 
 <script>
-	import SonComponent from './SonComponent.vue';
+	import SonComponent from './SonComponent';
 	export default {
 		name: 'ChildComponent',
-		// 要記得註冊元件，且值是物件
 		components: { SonComponent },
 	};
 </script>

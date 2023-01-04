@@ -14,14 +14,18 @@
 		name: 'demoOne',
 
 		// 為父元件 App 對子元件 demoOne 傳值，一樣是透過 Proxy 建立代理實體物件傳遞
-		// 宣告 props 陣列屬性來接收 Proxy 傳值
+		// 宣告 props 陣列屬性來接收 Proxy 傳值，只指定名稱
 		props: ['msg', 'school'],
-		// 除了可以接收陣列外，也可以接受物件屬性類型
+		// 除了可以接收陣列外，也可以接受物件屬性類型，指定名稱和類型
 		/* 官網範例：
 		  props: {
     		title: String,
     		likes: Number
   		}
+			或者指定名稱、類型和預設值
+			props: {
+				name: {type: String, required: true, default: 'Marry'},
+			}
 		*/
 
 		/* 

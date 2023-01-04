@@ -1,7 +1,8 @@
 <template>
 	<div class="app">
-		<h3>我是App祖先元件，{{ name }}--{{ price }}</h3>
 		<!-- 純粹父子元件之間傳資料呢？用 props -->
+		<h3>我是App祖先元件，{{ name }}--{{ price }}</h3>
+		<!-- v-bind:age="18" 可以簡寫為 :age="18" -->
 		<childComponent name="Jack" :age="18" />
 	</div>
 </template>
