@@ -1,7 +1,6 @@
 <template>
 	<div class="son2">
 		<h3>我是Son2元件</h3>
-		<Dialog />
 	</div>
 </template>
 
