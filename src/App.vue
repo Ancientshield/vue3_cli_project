@@ -1,16 +1,17 @@
 <template>
 	<div class="app">
-		<!-- 純粹父子元件之間傳資料呢？用 props -->
 		<h3>我是App祖先元件</h3>
-		<ChildComponent />
+		<Child />
+		<Child2 />
 	</div>
 </template>
 
 <script>
-	import ChildComponent from './components/ChildComponent';
+	import Child from './components/Child';
+	import Child2 from './components/Child2';
 	export default {
-		name: 'app',
-		components: { ChildComponent },
+		name: 'App',
+		components: { Child, Child2 },
 	};
 </script>
 

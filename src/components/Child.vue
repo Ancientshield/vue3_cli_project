@@ -1,15 +1,15 @@
 <template>
 	<div class="child">
 		<h3>我是Child元件</h3>
-		<SonComponent />
+		<Son />
 	</div>
 </template>
 
 <script>
-	import SonComponent from './SonComponent';
+	import Son from './Son';
 	export default {
-		name: 'ChildComponent',
-		components: { SonComponent },
+		name: 'Child',
+		components: { Son },
 	};
 </script>
 

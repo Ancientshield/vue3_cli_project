@@ -1,17 +1,18 @@
 <template>
-	<div class="son">
-		<h3>我是Son元件</h3>
+	<div class="son2">
+		<h3>我是Son2元件</h3>
+		<Dialog />
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'SonComponent',
+		name: 'Son2',
 	};
 </script>
 
 <style>
-	.son {
+	.son2 {
 		background-color: orange;
 		padding: 10px;
 	}
