@@ -1,15 +1,15 @@
 <template>
 	<div class="child">
-		<h3>我是Child元件</h3>
-		<Son />
+		<h3>我是ChildComponent元件</h3>
+		<SonComponent />
 	</div>
 </template>
 
 <script>
-	import Son from './Son';
+	import SonComponent from './SonComponent.vue';
 	export default {
-		name: 'Child',
-		components: { Son },
+		name: 'ChildComponent',
+		components: { SonComponent },
 	};
 </script>
 
