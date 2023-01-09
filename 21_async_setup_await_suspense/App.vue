@@ -3,7 +3,7 @@
 		<h3>我是App组件</h3>
 		<Suspense>
 			<template v-slot:default>
-				<Child />
+				<ChildComponent />
 			</template>
 			<template v-slot:fallback>
 				<h3>稍等，讀取中...</h3>
@@ -15,10 +15,12 @@
 <script>
 	// import Child from './components/Child.vue' // 靜態引入
 	import { defineAsyncComponent } from 'vue';
-	const Child = defineAsyncComponent(() => import('./components/Child')); // 動態引入 or 異步引入
+	const ChildComponent = defineAsyncComponent(() =>
+		import('./components/ChildComponent.vue')
+	); // 動態引入 or 異步引入
 	export default {
 		name: 'App',
-		components: { Child },
+		components: { ChildComponent },
 	};
 </script>
 

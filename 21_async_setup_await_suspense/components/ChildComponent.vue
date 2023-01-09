@@ -8,13 +8,14 @@
 <script>
 	import { ref } from 'vue';
 	export default {
-		name: 'Child',
+		name: 'ChildComponent',
 		async setup() {
 			let sum = ref(0);
 			let p = new Promise((resolve, reject) => {
 				setTimeout(() => {
 					resolve({ sum });
 				}, 3000);
+				console.log(reject);
 			});
 			return await p;
 		},
